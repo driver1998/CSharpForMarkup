@@ -1,7 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.38">
 	<PropertyGroup>
-		<Configurations>Debug;Release;Generate</Configurations>
-		<IsUno>true</IsUno>
+		<Configurations>Debug;Release;Generate</Configurations>		
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -41,7 +40,7 @@
 		
 	<PropertyGroup>
 		<RootNamespace>CSharpMarkup.SystemXaml</RootNamespace>
-		<TargetFrameworks>net7.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net7.0-windows10.0.22621.0</TargetFrameworks>
 		<TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
 		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
@@ -56,8 +55,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Dongle.WindowsSDK.NET" Version="10.0.19041.3" />
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+		<PackageReference Include="Dongle.WindowsSDK.NET" Version="10.0.22621.2-private.0"/>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup>
