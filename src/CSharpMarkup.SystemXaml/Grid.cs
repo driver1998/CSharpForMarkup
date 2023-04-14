@@ -4,7 +4,7 @@ using Windows.UI.Xaml;
 using Xaml = Windows.UI.Xaml;
 using Controls = Windows.UI.Xaml.Controls;
 
-using _Length = Windows.UI.Xaml.GridLength;
+using _Length = CSharpMarkup.SystemXaml.ConvertedGridLength;
 
 namespace CSharpMarkup.SystemXaml
 {
@@ -60,12 +60,10 @@ namespace CSharpMarkup.SystemXaml
 
         public struct ColumnWidths { internal _Length[] Lengths; }
 
-        public static GridLength Auto => _Length.Auto;
+        public static GridLength Auto => GridLength.Auto;
 
-        public static GridLength Star = new _Length(1.0, GridUnitType.Star);
-
-        public static GridLength GridLength(double value, GridUnitType type = GridUnitType.Auto) => new _Length(value, type);
-        public static GridLength Stars(double value) => new _Length(value, GridUnitType.Star);
+        public static GridLength Star = new GridLength(1.0, GridUnitType.Star);
+        public static GridLength Stars(double value) => new GridLength(value, GridUnitType.Star);
 
         public static int All<TEnum>() where TEnum : Enum
         {
@@ -97,8 +95,8 @@ namespace CSharpMarkup.SystemXaml
 
         public static implicit operator ConvertedGridLength(GridLength gridLength) => new ConvertedGridLength(gridLength);
 
-        public static implicit operator ConvertedGridLength(double pixels) => new ConvertedGridLength(
-        );
+        public static implicit operator ConvertedGridLength(double pixels) => new ConvertedGridLength(new GridLength(pixels, GridUnitType.Pixel));
+        
         public static implicit operator GridLength(ConvertedGridLength convertedGridLength) => convertedGridLength.length;
     }
 }

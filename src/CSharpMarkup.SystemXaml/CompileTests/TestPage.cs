@@ -110,8 +110,8 @@ namespace CompileTests
             ),
 
             Grid (
-                Rows(GridLength(10), GridLength(20), Auto, Star, Stars(2)),
-                Columns(GridLength(10), GridLength(20), Auto, Star, Stars(2)),
+                Rows(10, 20, Auto, Star, Stars(2)),
+                Columns(10, 20, Auto, Star, Stars(2)),
 
                 TextBlock("Hi")
                 .Grid(0, 1, 0, 1),
@@ -120,12 +120,12 @@ namespace CompileTests
             ),
 
             Grid (
-                Rows ((row.First , GridLength(10)),
-                      (row.Second, GridLength(20)),
+                Rows ((row.First , 10),
+                      (row.Second, 20),
                       (row.Third , Auto)),
 
-                Columns ((column.First , GridLength(10)),
-                         (column.Second, GridLength(20)),
+                Columns ((column.First , 10),
+                         (column.Second, 20),
                          (column.Third , Auto)),
 
                 TextBlock("Hi")
